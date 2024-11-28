@@ -1,19 +1,14 @@
 package com.example.jenkinslab;
 
 
-import java.util.List;
-
-
 public class User {
 
     private String id;
     private String name;
-    private List<Pet> pets;
 
-    public User(String id, String name, List<Pet> pets) {
+    public User(String id, String name) {
         this.id = id;
         this.name = name;
-        this.pets = pets;
     }
 
     public String getId() {
@@ -22,10 +17,6 @@ public class User {
 
     public String getName() {
         return name;
-    }
-
-    public List<Pet> getPets() {
-        return pets;
     }
 
 }

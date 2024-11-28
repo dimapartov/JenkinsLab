@@ -13,8 +13,8 @@ public class UserController {
     public List<User> getUsers() {
         List<User> users = new ArrayList<>();
 
-        users.add(new User("1", "Alice", List.of(new Pet("1", "Buddy", "Dog"))));
-        users.add(new User("2", "Bob", List.of(new Pet("2", "Mittens", "Cat"))));
+        users.add(new User("1", "Alice"));
+        users.add(new User("2", "Bob"));
 
         return users;
     }
