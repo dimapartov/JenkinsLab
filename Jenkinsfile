@@ -22,6 +22,15 @@ pipeline {
             }
         }
 
+        stage('Verify Artifact') {
+            steps {
+                sh '''
+                echo "Checking if artifact exists..."
+                ls -l target/
+                '''
+            }
+        }
+
         stage('Docker Build') {
             steps {
                 sh '''
