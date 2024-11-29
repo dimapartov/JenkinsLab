@@ -39,21 +39,6 @@ pipeline {
             }
         }
 
-        stage('Docker Push') {
-            steps {
-                script {
-                    if (DOCKER_REGISTRY) {
-                        sh '''
-                        docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${DOCKER_TAG}
-                        docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${DOCKER_TAG}
-                        '''
-                    } else {
-                        echo 'Using local Docker registry'
-                    }
-                }
-            }
-        }
-
         stage('Deploy') {
             steps {
                 sh '''
